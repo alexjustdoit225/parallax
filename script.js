@@ -16,22 +16,13 @@ backgroundLayer4.src = "/assets/layer-4.png";
 const backgroundLayer5 = new Image();
 backgroundLayer5.src = "/assets/layer-5.png";
 
-//x moves the image along the x axis
-let x = 0; 
-let x2 = 2400; 
+class Layer {
+    
+}
 
 function animate(){
     //clears canvas; deletes old animation frames
     c.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT); 
-    //drawImage(image, x, y)
-    c.drawImage(backgroundLayer4, x, 0);
-    c.drawImage(backgroundLayer4, x2, 0); 
-    //attaches gameSpeed to x/horizontal movement
-    //detect when an image moves offscreen and resets to scroll again
-    if (x < -2400) x = 2400 + x2 - gameSpeed; 
-    else x -= gameSpeed; 
-    if (x2 < -2400) x2 = 2400 + x - gameSpeed;
-    else x2 -= gameSpeed; 
     requestAnimationFrame(animate);
 }; 
 animate(); 
