@@ -51,6 +51,8 @@ const layer4 = new Layer(backgroundLayer4, 0.5);
 function animate(){
     //clears canvas; deletes old animation frames
     c.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT); 
+    layer4.update(); 
+    layer4.draw();
     requestAnimationFrame(animate);
 }; 
 animate(); 
