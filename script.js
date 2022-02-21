@@ -16,7 +16,8 @@ backgroundLayer4.src = "/assets/layer-4.png";
 const backgroundLayer5 = new Image();
 backgroundLayer5.src = "/assets/layer-5.png";
 
-const slider = document.getElementById("slider"); 
+window.addEventListener("load", function(){
+    const slider = document.getElementById("slider"); 
 slider.value = gameSpeed; 
 const showGameSpeed = document.getElementById("showGameSpeed"); 
 showGameSpeed.innerHTML = gameSpeed; 
@@ -42,12 +43,7 @@ class Layer {
             //makes sure there is no gap between images
             this.x = 0; 
         }
-        // if (this.x2 <= -this.width){
-            // //makes sure there is no gap between image
-            // this.x2 = this.width + this.x - this.speed;
-        // }
-        this.x = Math.floor(this.x - this.speed); 
-        // this.x2 = Math.floor(this.x2 - this.speed); 
+        this.x = Math.floor(this.x - this.speed);  
     }
     draw(){
         c.drawImage(this.image, this.x, this.y, this.width, this.height);
@@ -73,3 +69,4 @@ function animate(){
     requestAnimationFrame(animate);
 }; 
 animate(); 
+}); 
